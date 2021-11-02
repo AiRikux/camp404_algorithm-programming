@@ -1,3 +1,7 @@
+# libraries
+import random
+# from statistics import mode
+
 # # condition
 # a_key = input("Password: ")
 # if a_key == "test123":
@@ -61,9 +65,7 @@
 #
 #
 # # linear search
-import random
-
-search = int(input("Insert 1 - 10 to search: "))
+# search = int(input("Insert 1 - 10 to search: "))
 # create a list of random integer
 numbers = []
 for r in list(range(1, 10)):
@@ -79,7 +81,6 @@ for r in list(range(1, 10)):
 # 	print("none here")
 #
 #
-# from statistics import mode
 # # sort list
 # numbers.sort()
 # count = 0
@@ -107,8 +108,32 @@ for r in list(range(1, 10)):
 # 	print("none here")
 #
 # Bubble Sort
+# try to sort it ascending
+print(numbers)
 # get the length of the list
 n = len(numbers)
-for i in list(range(n)):
-	print(i)
+fixing = True
+while fixing:
+	fixing = False
+	for i in list(range(n)):
+		current = numbers[i]
+
+		# make sure we don't go outside the list index
+		if i != n-1:
+			after = numbers[i+1]
+		else:
+			continue
+
+		if current > after:
+			print("Fixing....")
+			# mark there is fixing
+			fixing = True
+			# switch places
+			numbers[i] = after
+			numbers[i+1] = current
+			print(numbers)
+
+# when fixing is False the loop will stop and give us the fixed result
+print(numbers)
+
 

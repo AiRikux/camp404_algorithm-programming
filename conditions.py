@@ -2,6 +2,16 @@
 import random
 # from statistics import mode
 
+# functions
+# create a list of random integer
+
+
+def make_numbers():
+	numb = []
+	for _ in list(range(1, 10)):
+		numb.append(random.randint(1, 10))
+	return numb
+
 # # condition
 # a_key = input("Password: ")
 # if a_key == "test123":
@@ -66,11 +76,8 @@ import random
 #
 # # linear search
 # search = int(input("Insert 1 - 10 to search: "))
-# create a list of random integer
-numbers = []
-for r in list(range(1, 10)):
-	numbers.append(random.randint(1, 10))
 # # linear search the number from the list
+# numbers = make_numbers()
 # count = 0
 # for i in numbers:
 # 	if i == search:
@@ -80,7 +87,8 @@ for r in list(range(1, 10)):
 # else:
 # 	print("none here")
 #
-#
+# # Binary Search
+# numbers = make_numbers()
 # # sort list
 # numbers.sort()
 # count = 0
@@ -107,33 +115,88 @@ for r in list(range(1, 10)):
 # else:
 # 	print("none here")
 #
-# Bubble Sort
+# # Bubble Sort
+# numbers = make_numbers()
+# # try to sort it ascending
+# print(numbers)
+# # get the length of the list
+# n = len(numbers)
+# fixing = True
+# while fixing:
+# 	fixing = False
+# 	for i in list(range(n)):
+# 		current = numbers[i]
+#
+# 		# make sure we don't go outside the list index
+# 		if i != n-1:
+# 			after = numbers[i+1]
+# 		else:
+# 			continue
+#
+# 		if current > after:
+# 			print("Fixing....")
+# 			# mark there is fixing
+# 			fixing = True
+# 			# switch places
+# 			numbers[i] = after
+# 			numbers[i+1] = current
+# 			print(numbers)
+#
+# # when fixing is False the loop will stop and give us the fixed result
+# print("Here is the result for Bubble Sort")
+# print(numbers)
+#
+# Selective Sort
 # try to sort it ascending
-print(numbers)
-# get the length of the list
-n = len(numbers)
-fixing = True
-while fixing:
-	fixing = False
-	for i in list(range(n)):
-		current = numbers[i]
+#
+#
+# numbers = make_numbers()
+# new_numbers = []
+# print(numbers, "------>", new_numbers)
+# while len(numbers) > 0:
+# 	lowest = None
+# 	for i in list(range(len(numbers))):
+# 		if lowest is None:
+# 			lowest = numbers[i]
+# 			lowest_index = i
+# 		else:
+# 			if numbers[i] < lowest:
+# 				lowest = numbers[i]
+# 				lowest_index = i
+# 	new_numbers.append(numbers.pop(lowest_index))
+# 	print(numbers, "------>", new_numbers)
+#
+#
+# # Insertion Sort
+# numbers = make_numbers()
+# print(numbers)
+# # start from a certain position
+# n = 0
+# yes = True
+# while yes:
+# 	if n == 0:
+# 		if numbers[n] > numbers[n+1]:
+# 			print("Fixing...")
+# 			# switch places
+# 			current = numbers[n]
+# 			after = numbers[n+1]
+# 			numbers[n] = after
+# 			numbers[n+1] = current
+# 	elif n == len(numbers):
+# 		yes = False
+# 	else:
+# 		current = numbers[n]
+# 		for i in list(range(n)):
+# 			versus = numbers[i]
+# 			if current < versus:
+# 				print("Fixing...")
+# 				value = numbers.pop(n)
+# 				numbers.insert(i, value)
+# 				break
+# 	print(f"With n={n} we get {numbers}")
+# 	n += 1
+#
+# print(f"Result is {numbers}")
 
-		# make sure we don't go outside the list index
-		if i != n-1:
-			after = numbers[i+1]
-		else:
-			continue
-
-		if current > after:
-			print("Fixing....")
-			# mark there is fixing
-			fixing = True
-			# switch places
-			numbers[i] = after
-			numbers[i+1] = current
-			print(numbers)
-
-# when fixing is False the loop will stop and give us the fixed result
-print(numbers)
 
 
